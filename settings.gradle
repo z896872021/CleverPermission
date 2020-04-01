@@ -1,1 +1,2 @@
-include ':app'
+include ':app', ':cleverpermission'
+project(':cleverpermission').projectDir = new File('clever_permission')
