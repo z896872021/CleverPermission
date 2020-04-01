@@ -1,1 +1,1 @@
-include ':app', ':clever_permission'
+include ':app'
