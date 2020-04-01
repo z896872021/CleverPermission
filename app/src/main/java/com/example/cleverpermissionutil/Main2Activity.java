@@ -4,9 +4,6 @@ import android.Manifest;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import com.example.clever_permission.Permission;
-import com.example.clever_permission.PermissionCallBackModel;
-import com.example.clever_permission.RxPermissionUtils;
 import com.example.cleverpermissionutil.permission.*;
 import org.jetbrains.annotations.NotNull;
 
