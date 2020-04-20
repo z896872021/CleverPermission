@@ -1,12 +1,13 @@
 package com.example.cleverpermissionutil.permission
 
 import android.app.Activity
+import android.content.Context
 import android.content.DialogInterface
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.example.clever_permission.RxPermissionUtils
 
-public class NormalPermissionCallBack : BasePermissionCallBack() {
+public class NormalPermissionCallBack(context: Context) : BasePermissionCallBack(context = context) {
     //    AlertDialog.Builder alertDialog
     lateinit var alertDialog: AlertDialog.Builder
     override fun onRequestPermissionFailure(permissions: List<String>) {

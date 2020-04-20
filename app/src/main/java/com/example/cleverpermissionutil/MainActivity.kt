@@ -4,9 +4,7 @@ import android.Manifest
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.example.cleverpermissionutil.permission.NormalPermissionCallBack
-import com.example.cleverpermissionutil.permission.Permission
-import com.example.cleverpermissionutil.permission.PermissionCallBackModel
+import com.example.clever_permission.Permission
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -21,14 +19,20 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+//        RxPermissionUtils.setPermissionCallback(PermissionSkipFailureCallBack(this))
     }
 
-    @Permission(permissions = arrayOf(Manifest.permission.CAMERA))
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+    }
+
+    @Permission(permissions = [Manifest.permission.CAMERA])
     fun requestPermission() {
         tv_text.text = "权限请求成功"
     }
 
-    @Permission(permissions = arrayOf(Manifest.permission.RECORD_AUDIO))
+    @Permission(permissions = [Manifest.permission.RECORD_AUDIO])
     fun requestPermission1() {
         tv_text1.text = "权限1请求成功"
     }

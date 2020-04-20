@@ -1,10 +1,11 @@
 package com.example.cleverpermissionutil.permission
 
+import android.content.Context
 import android.content.DialogInterface
 import androidx.appcompat.app.AlertDialog
 import com.example.clever_permission.RxPermissionUtils
 
-public abstract class PermissionSkipFailureCallBack : BasePermissionCallBack() {
+public abstract class PermissionSkipFailureCallBack(context: Context) : BasePermissionCallBack(context) {
     //    AlertDialog.Builder alertDialog
     lateinit var alertDialog: AlertDialog.Builder
 

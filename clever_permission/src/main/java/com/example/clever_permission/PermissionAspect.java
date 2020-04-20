@@ -73,12 +73,7 @@ public class PermissionAspect {
                                     return isModel ? (BasePermissionCallBack) createObject.newClass(f.getType()) : null;
                                 }));
                                 if (callback.get() == null) {
-                                    callback.set(new NormalPermissionCallBack());
-                                }
-                                try {
-                                    ((BasePermissionCallBack)callback.get()).setContext((Context) joinPoint.getThis());
-                                }catch (Exception e){
-                                    Log.e("onPermission", "@PermissionCallBackModel use object must is extended BasePermissionCallBack");
+                                    callback.set(new NormalPermissionCallBack((Context) joinPoint.getThis()));
                                 }
                             }else {
                                 callback.set(RxPermissionUtils.getPermissionCallback());
